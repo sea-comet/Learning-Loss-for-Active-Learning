@@ -26,7 +26,7 @@ class LossNet(nn.Module):
     
     def forward(self, features):
         out1 = self.GAP1(features[0])
-        out1 = out1.view(out1.size(0), -1)
+        out1 = out1.view(out1.size(0), -1)           #最后一个-1维度应该是channel吧
         out1 = F.relu(self.FC1(out1))
 
         out2 = self.GAP2(features[1])
